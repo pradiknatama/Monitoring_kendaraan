@@ -49,7 +49,6 @@ class HomeController extends Controller
     }
     protected function indexUser(){
         $tes=Verifikasi::with(['riwayat','users'])->where('user_id',Auth::user()->id)->get();
-        
         return view('pages.staf.dashboard',compact('tes'));
     }
 }

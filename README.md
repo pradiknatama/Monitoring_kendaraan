@@ -1,63 +1,33 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Daftar Username Password
+Admin
+-   Email    :admin@gmail.com
+-   Password :12345678
+Staff
+-   Email    :tama@gmail.com
+-   Password :12345678
+-   Email    :alfian@gmail.com
+-   Password :12345678
 
-## About Laravel
+## Database Version
+mysql 8.0.15
+##  php version
+PHP: 8.0.15
+### Framework 
+Laravel 8
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Panduan Penggunaan Aplikasi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Admin:
+    -input pegawai= Admin dapat melakukan penambahan pegawai dengan cara masuk/memilih menu pegawai yang telah ada di sidebar.Pada halaman pegawai admin dapat melakukan penambahan pegawai dengan cara menekan button tambah pegawai, kemudian akan muncul form untuk mengisi data dari pegawai tersebut. apabila sudah selesai kemudian tekan button submit untuk menyimpan data yang telah diinputkan. Setelah selesai admin dapat melihat data pegawai yang telah di daftarkan melalui table yang tersedia di halaman pegawai.
+    -input kendaraan= Admin dapat melakukan penambahan kendaraan dengan cara masuk/memilih menu kendaraan yang ada di sidebar. Pada halaman kendaraan terdapat table untuk menampilkan data dari kendaraan yang sudah diinputkan dan juga terdapat button tambah kendaraan yang berguna untuk menambahkan data kendaraan yang diperlukan. Setelah memilih button tambah kendaraan maka akan ditampilkan form untuk mengisi data dari kendaraan.Setelah selesai mengisi form lalu pilih submit untuk menyimpan data kendaraan yang telah diinputkan.
+    -input pesanan= Admin memilih menu pesanan yang ada di sidebar. Kemudian terdapat table untuk menampilkan data dari pesanan yang sudah diinputkan dan juga terdapat button tambah pesanan untuk menambahkan pesanan yang diperlukan. Setelah memilih button tambah pesanan maka tersedia form seperti nama pegawai yang memesan, nama driver yang akan mengendarai, memilih kendaraan yang akan digunakan , kemudian memilih pihak 1, dan 2 yang akan menyetujui.setelah selesai makan akan kembali pada tampilan pesanan dan menampilkan status apakah sudah diverifikasi(disetujui) atau belum diverifikasi oleh pihak yang menyetujui.
+    -pada halaman home admin dapat melihat jumlah pegawai, kendaraan,dan lokasi kantor. Kemudain terdapat juga table data pesanan kendaraan yang dapat di ubah menjadi excel, ataupun pdf.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-staf(pihak yang menyetujui pesanan):
+    -Pada halaman home staf dapat melihat data pesanan kendaraan yang belum diverifikasi ataupun sudah diverifikasi oleh staff tersebut.Apabila ingin memverifikasi staf hanya perlu memilih data pesanan mana yang ingin diverifikasi kemudian menekan button verifikasi. Setelah menekan button verifikasi maka status data pesanan yang telah dipilih sebelumnya akan menjadi Terverifikasi. Apabila staf membutuhkan data pesanan kendaraan maka staf dapat mendownload filenya menjadi excel ataupun pdf
+## ERD
+<p align="center"><img src="/public/img/erd.png" width="800"></p>
 
 ## License
 

@@ -73,7 +73,7 @@
         <!-- /.card-body -->
         <div class="card-footer">
           <button type="submit" class="btn btn-primary">Submit</button>
-          <a href="/produk" class="btn btn-secondary">Kembali</a>
+          <a href="/kendaraan" class="btn btn-secondary">Kembali</a>
         </div>
       </form>
     </div>
