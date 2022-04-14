@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Riwayat;
+use App\Models\Lokasi;
 class Kendaraan extends Model
 {
     use HasFactory;
@@ -15,5 +16,8 @@ class Kendaraan extends Model
     ];
     public function riwayat(){
         return $this->hasMany(Riwayat::class,'kendaraan_id','id');
+    }
+    public function lokasi(){
+        return $this->belongsTo(Lokasi::class, 'lokasi_id','id');
     }
 }

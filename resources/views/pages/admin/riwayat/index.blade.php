@@ -30,9 +30,9 @@
                     <th >
                         Penyetuju 2
                     </th>
-                    <th style="width: 20%">
+                    {{-- <th style="width: 20%">
                         Action
-                    </th>
+                    </th> --}}
               </tr>
           </thead>
           <tbody>
@@ -65,15 +65,10 @@
                 <td>
                     {{ $item->verifikasi[1]->users->name}}
                 </td>
-                <td class="project-actions ">
+                {{-- <td class="project-actions ">
                     <form action="/produk/{{ $item->id }}" method="post">
                         @csrf
                         @method('delete')
-                        {{-- <a class="btn btn-primary btn-sm" href="/kategori/{{ $item->id }}">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a> --}}
                         <a class="btn btn-info btn-sm" href="/produk/{{ $item->id }}/edit">
                             <i class="fas fa-pencil-alt">
                             </i>
@@ -84,7 +79,7 @@
                         </i> 
                         Delete</button>
                     </form>
-                </td>
+                </td> --}}
             </tr>
             @empty
                 <tr><td colspan="7"><center>Data Produk Masih Kosong</center></td></tr>

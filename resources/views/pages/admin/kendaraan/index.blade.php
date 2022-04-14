@@ -56,7 +56,7 @@
                     {{ $item->rental}}
                 </td>
                 <td class="project-actions ">
-                    <form action="/produk/{{ $item->id }}" method="post">
+                    <form action="/kendaraan/{{ $item->id }}" method="post">
                         @csrf
                         @method('delete')
                         {{-- <a class="btn btn-primary btn-sm" href="/kategori/{{ $item->id }}">
@@ -64,7 +64,7 @@
                             </i>
                             View
                         </a> --}}
-                        <a class="btn btn-info btn-sm" href="/produk/{{ $item->id }}/edit">
+                        <a class="btn btn-info btn-sm" href="/kendaraan/{{ $item->id }}/edit">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit

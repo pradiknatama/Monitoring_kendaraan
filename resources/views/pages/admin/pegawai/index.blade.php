@@ -38,10 +38,10 @@
                     {{ $item->jabatan}}
                 </td>
                 <td class="project-actions ">
-                    <form action="/produk/{{ $item->id }}" method="post">
+                    <form action="/pegawai/{{ $item->id }}" method="post">
                         @csrf
                         @method('delete')
-                        <a class="btn btn-info btn-sm" href="/produk/{{ $item->id }}/edit">
+                        <a class="btn btn-info btn-sm" href="/pegawai/{{ $item->id }}/edit">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit

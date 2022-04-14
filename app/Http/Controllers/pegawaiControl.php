@@ -34,4 +34,37 @@ class pegawaiControl extends Controller
         );
         return redirect('/pegawai')->withSuccessMessage("Berhasil Menambahkan Kategori");
     }
+    public function edit($id)
+    {
+
+        $pegawai= Pegawai::where('id',$id)->first();
+
+        return view('pages.admin.pegawai.show',compact('pegawai'));
+    }
+    public function update(Request $request,$id)
+    {
+        $request->validate(
+            [
+                'nama'=>'required',
+                'jabatan'=>'required'
+            ],
+            [
+                'nama.required'=>'Inputan nama kategori harus diisi',
+                'jabatan.required'=>'Inputan jabatan harus diisi',
+            ]
+        );
+        Pegawai::where('id',$id)
+        ->update(
+            [
+                'nama'=>$request['nama'],
+                'jabatan'=>$request['jabatan'],
+            ]
+        );
+        return redirect('/pegawai')->withSuccessMessage("Berhasil Menambahkan Kategori");
+    }
+    public function destroy($id)
+    {
+       Pegawai::where('id',$id)->delete();
+       return redirect('/pegawai')->withSuccessMessage("Berhasil Menghapus Kategori");
+    }
 }

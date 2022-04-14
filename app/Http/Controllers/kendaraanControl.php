@@ -24,26 +24,99 @@ class kendaraanControl extends Controller
                 'j_mobil'=>'required',
                 'bbm'=>'required',
                 'servis'=>'required',
-                'rental'=>'required',
+
             ],
             [
                 'nama.required'=>'Inputan nama harus diisi',
                 'j_mobil.required'=>'Inputan Jenis Mobil harus diisi',
                 'bbm.required'=>'Inputan bbm kategori harus diisi',
                 'servis.required'=>'Inputan servis harus diisi',
-                'rental.required'=>'Inputan rental harus diisi',
+
             ]
         );
-        $p=Kendaraan::insert(
-            [
-                'name'=>$request['nama'],
-                'jenis_mobil'=>$request['j_mobil'],
-                'bbm'=>$request['bbm'],
-                'service'=>$request['servis'],
-                'rental'=>$request['rental'],
-                'lokasi_id'=>$request['location'],
-            ]
-        );
+        if ($request['rental']!='') {
+            $p=Kendaraan::insert(
+                [
+                    'name'=>$request['nama'],
+                    'jenis_mobil'=>$request['j_mobil'],
+                    'bbm'=>$request['bbm'],
+                    'service'=>$request['servis'],
+                    'rental'=>$request['rental'],
+                    'lokasi_id'=>$request['location'],
+                ]
+            );
+        } else {
+            $p=Kendaraan::insert(
+                [
+                    'name'=>$request['nama'],
+                    'jenis_mobil'=>$request['j_mobil'],
+                    'bbm'=>$request['bbm'],
+                    'service'=>$request['servis'],
+                    'rental'=>'',
+                    'lokasi_id'=>$request['location'],
+                ]
+            );
+        }
+        
         return redirect('/kendaraan')->withSuccessMessage("Berhasil Menambahkan Kategori");
+    }
+    public function edit($id)
+    {
+        $loc=Lokasi::get();
+        $kendaraan= Kendaraan::where('id',$id)->first();
+        // dd($kendaraan->lokasi->all());
+        return view('pages.admin.kendaraan.show',compact('kendaraan','loc'));
+    }
+    public function update(Request $request,$id)
+    {
+        $request->validate(
+            [
+                'nama'=>'required',
+                'j_mobil'=>'required',
+                'bbm'=>'required',
+                'servis'=>'required',
+
+            ],
+            [
+                'nama.required'=>'Inputan nama harus diisi',
+                'j_mobil.required'=>'Inputan Jenis Mobil harus diisi',
+                'bbm.required'=>'Inputan bbm kategori harus diisi',
+                'servis.required'=>'Inputan servis harus diisi',
+
+            ]
+        );
+
+        if ($request['rental']!='') {
+            $p=Kendaraan::where('id',$id)
+            ->update(
+                [
+                    'name'=>$request['nama'],
+                    'jenis_mobil'=>$request['j_mobil'],
+                    'bbm'=>$request['bbm'],
+                    'service'=>$request['servis'],
+                    'rental'=>$request['rental'],
+                    'lokasi_id'=>$request['location'],
+                ]
+            );
+        } else {
+            $p=Kendaraan::where('id',$id)
+            ->update(
+                [
+                    'name'=>$request['nama'],
+                    'jenis_mobil'=>$request['j_mobil'],
+                    'bbm'=>$request['bbm'],
+                    'service'=>$request['servis'],
+                    'rental'=>'',
+                    'lokasi_id'=>$request['location'],
+                ]
+            );
+        }
+        
+        return redirect('/kendaraan')->withSuccessMessage("Berhasil Menambahkan Kategori");
+    }
+    public function destroy($id)
+    {
+       Kendaraan::where('id',$id)->delete();
+       return redirect('/kendaraan')->withSuccessMessage("Berhasil Menghapus Kategori");
     }
 }
