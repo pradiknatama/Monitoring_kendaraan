@@ -41,14 +41,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/pesanan" class="nav-link {{'pesanan'==Request()->path()?'active':''}}">
-              <i class="nav-icon fas fa-shopping-cart"></i>
-              <p>
-                Pesanan
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="/kendaraan" class="nav-link {{'kendaraan'==Request()->path()?'active':''}}">
                 <i class="nav-icon fas fa-list"></i>
               <p>
@@ -56,7 +48,14 @@
               </p>
             </a>
           </li>          
-          
+          <li class="nav-item">
+            <a href="/pesanan" class="nav-link {{'pesanan'==Request()->path()?'active':''}}">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>
+                Pesanan
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

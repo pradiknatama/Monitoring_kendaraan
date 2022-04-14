@@ -12,13 +12,13 @@
                     <th style="width: 5%">
                         #
                     </th>
-                    <th style="width: 10%">
+                    <th >
                         Nama
                     </th>
-                    <th >
+                    <th style="width: 20%">
                         Jabatan
                     </th>
-                    <th style="width: 20%">
+                    <th style="width:20%">
                         Action
                     </th>
               </tr>
@@ -37,18 +37,10 @@
                 <td>
                     {{ $item->jabatan}}
                 </td>
-                <td>
-                    <img src="{{ asset('/images/produk/'.$item->foto)}}" alt="">
-                </td>
                 <td class="project-actions ">
                     <form action="/produk/{{ $item->id }}" method="post">
                         @csrf
                         @method('delete')
-                        {{-- <a class="btn btn-primary btn-sm" href="/kategori/{{ $item->id }}">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a> --}}
                         <a class="btn btn-info btn-sm" href="/produk/{{ $item->id }}/edit">
                             <i class="fas fa-pencil-alt">
                             </i>

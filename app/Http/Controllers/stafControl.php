@@ -15,21 +15,21 @@ class stafControl extends Controller
         $verif->status='1';
         $verif->save();
 
-        $coba=Riwayat::with(['verifikasi'])->get()->where('id',$id);
-        $banding=$coba[0]->verifikasi[0]->status;
-        $banding2=$coba[0]->verifikasi[1]->status;
-
-
+        $verifikasi=Verifikasi::with(['riwayat'])->where('id',$id)->get();
+        $id_verif=$verifikasi[0]->riwayat_id;
+        $riwayat=Riwayat::with(['verifikasi'])->where('id',$id_verif)->get();
+        $banding=$riwayat[0]->verifikasi[0]->status;
+        $banding2=$riwayat[0]->verifikasi[1]->status;
         if($banding =="1" && $banding2=="1"){
-            $status=Riwayat::find($id);
+            $status=Riwayat::find($riwayat[0]->id);
             $status->status='1';
             $status->save();
         }
         else{
-            $status=Riwayat::find($id);
+            $status=Riwayat::find($riwayat[0]->id);
             $status->status='0';
             $status->save();
         }
-        return Redirect::back();
+        return redirect('/home');
     }
 }
